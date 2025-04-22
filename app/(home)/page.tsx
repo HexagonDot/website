@@ -47,11 +47,12 @@ const Home = async () => {
     <>
       <Section>
         <Avatar className="h-12 w-12" />
-        <h1>Hayden Bleasel</h1>
+        <h1 className="text-7xl font-instrument tracking-tight">Hi, I'm Mauro</h1>
+        <h2 className="text-2xl mt-0 mb-10">Digital Product Manager & Startup Accelerator Manager</h2>
         <p>
-          I&apos;m an Australian Design Engineer living in{' '}
-          <LocationCard timezone="America/New_York">
-            🇺🇸 Delray Beach, Florida
+          I&apos;m an Italian Product Manager living in{' '}
+          <LocationCard timezone="Europe/Amsterdam">
+            🇪🇺 Amsterdam, Netherlands
           </LocationCard>
           . I love creating beautiful software that delights users and
           reimagines the way we interact with technology. I&apos;m also an avid

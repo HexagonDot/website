@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Serif:ital@0;1&display=swap');
 @import 'tailwindcss';
 @custom-variant dark (&:is(.dark *));
 
@@ -33,6 +34,8 @@
   --error: var(--color-rose-400);
 }
 
+
+
 @theme inline {
   --color-foreground: var(--foreground);
   --color-foreground-light: var(--foreground-light);
@@ -46,6 +49,16 @@
   --color-error: var(--error);
 }
 
+@layer utilities {
+  .font-instrument {
+    font-family: 'Instrument Serif', serif;
+  }
+  .font-sans-geist {
+    font-family: "Geist", sans-serif;
+  }
+}
+
+
 @layer base {
   *,
   ::after,
@@ -54,6 +67,7 @@
   ::file-selector-button {
     border-color: var(--color-border, currentColor);
     @apply min-w-0;
+     font-family: "Geist", sans-serif;
   }
 
   body {
