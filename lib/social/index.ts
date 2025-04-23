@@ -12,20 +12,6 @@ import X from './x.svg';
 import YouTube from './youtube.svg';
 
 export const social = {
-  x: {
-    label: 'X',
-    href: 'https://x.com/haydenbleasel',
-    icon: X,
-    follow: true,
-    invert: true,
-  },
-  github: {
-    label: 'GitHub',
-    href: 'https://github.com/haydenbleasel',
-    icon: GitHub,
-    follow: true,
-    invert: true,
-  },
   linkedin: {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/haydenbleasel',

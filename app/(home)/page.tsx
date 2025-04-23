@@ -9,7 +9,7 @@ import { Social } from '@/components/social';
 import { Stack } from '@/components/stack';
 import { Video } from '@/components/video';
 import { env } from '@/lib/env';
-import { interviews, speaking } from '@/lib/live';
+import { work, interviews, speaking } from '@/lib/live';
 import { createMetadata } from '@/lib/metadata';
 import { projects } from '@/lib/projects';
 import { resend } from '@/lib/resend';
@@ -45,16 +45,18 @@ const Home = async () => {
 
   return (
     <>
+      
       <Section>
         <Avatar className="h-12 w-12" />
         <h1 className="text-7xl font-instrument tracking-tight">Hi, I'm Mauro</h1>
-        <h2 className="text-2xl mt-0 mb-10">Digital Product Manager & Startup Accelerator Manager</h2>
+        <h2 className="text-xl mt-0 mb-12">Digital Product Manager<br/>Startup Accelerator Manager</h2>
+
         <p>
-          I&apos;m an Italian Product Manager living in{' '}
+          I&apos;m an 🇮🇹 Italian Product Manager living in{' '}
           <LocationCard timezone="Europe/Amsterdam">
-            🇪🇺 Amsterdam, Netherlands
-          </LocationCard>
-          . I love creating beautiful software that delights users and
+            🇳🇱 Amsterdam, Netherlands,
+          </LocationCard> and I identify myself as 🇪🇺 European.
+          I love creating beautiful software that delights users and
           reimagines the way we interact with technology. I&apos;m also an avid
           drone pilot, gamer and open source maintainer.
         </p>
@@ -88,8 +90,16 @@ const Home = async () => {
               </li>
             ))}
         </ul>
+        
       </Section>
       <Section delay={0.2}>
+        <h2>Work</h2>
+        <p>Some conferences, meetups and interviews I've been a part of.</p>
+        <Features
+          data={[...work].sort((a, b) => b.year - a.year)}
+        />
+      </Section>
+      <Section delay={0.4}>
         <h2>Work</h2>
         <p>
           My previous role was Chief Product Officer at{' '}
@@ -203,13 +213,7 @@ const Home = async () => {
         <p>Here's some tools, technology and products I use every day.</p>
         <Stack data={stack} />
       </Section>
-      <Section delay={1}>
-        <h2>Speaking and Interviews</h2>
-        <p>Some conferences, meetups and interviews I've been a part of.</p>
-        <Features
-          data={[...speaking, ...interviews].sort((a, b) => b.year - a.year)}
-        />
-      </Section>
+      
       <div className="-mx-8 border-t border-dotted p-8">
         <Section delay={1.2}>
           <FootnoteContent index={1}>
@@ -232,17 +236,7 @@ const Home = async () => {
       </div>
       <footer className="text-foreground-lighter text-sm leading-relaxed">
         <p>
-          &copy; {new Date().getFullYear()} Hayden Bleasel. All rights reserved.
-        </p>
-        <Link href="https://logo.dev" aria-label="Logo API" target="_blank">
-          Logos provided by Logo.dev
-        </Link>
-        <p>
-          View the{' '}
-          <Link href="https://github.com/haydenbleasel/website">
-            source code
-          </Link>
-          .
+          &copy; {new Date().getFullYear()} Mauro Fontanari. All rights reserved.
         </p>
       </footer>
     </>

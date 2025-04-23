@@ -8,10 +8,10 @@ const baseUrl = `${protocol}://${env.VERCEL_PROJECT_PRODUCTION_URL}`;
 const person: WithContext<Person> = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Hayden Bleasel',
+  name: 'Mauro Fontanari',
   description: 'Design Engineer',
   gender: 'male',
-  nationality: 'Australian',
+  nationality: 'Italian',
   url: baseUrl,
   image: new URL('/profile.jpg', baseUrl).toString(),
   sameAs: Object.values(social).map(({ href }) => href),
