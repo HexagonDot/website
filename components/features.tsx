@@ -13,7 +13,7 @@ export const Features = ({ data }: FeaturesProps) => {
   return (
     <>
       <div className="grid gap-3">
-        {data.slice(0, open ? data.length : 5).map((feature) => (
+        {data.slice(0, open ? data.length : 2).map((feature) => (
           <Feature key={feature.name} {...feature} />
         ))}
       </div>

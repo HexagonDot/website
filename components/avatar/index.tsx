@@ -12,7 +12,7 @@ export const Avatar = ({ className }: AvatarProps) => (
     alt=""
     width={48}
     height={48}
-    className={cn('h-4 w-4 rounded-full', className)}
+    className={cn('h-6 w-6 rounded-xl', className)}
     placeholder="blur"
     priority
   />

@@ -1,22 +1,23 @@
-import { Avatar } from '@/components/avatar';
-import { Features } from '@/components/features';
-import { FootnoteContent, FootnoteMarker } from '@/components/footnote';
-import { Link } from '@/components/link';
-import { LocationCard } from '@/components/location-card';
-import { MailingList } from '@/components/mailing-list';
-import { Section } from '@/components/section';
-import { Social } from '@/components/social';
-import { Stack } from '@/components/stack';
-import { Video } from '@/components/video';
-import { env } from '@/lib/env';
-import { work } from '@/lib/live';
-import { createMetadata } from '@/lib/metadata';
-import { projects } from '@/lib/projects';
-import { resend } from '@/lib/resend';
-import { social } from '@/lib/social';
-import { stack } from '@/lib/stack';
-import type { Metadata } from 'next';
-import { unstable_cache } from 'next/cache';
+import { Avatar } from "@/components/avatar";
+import Bento from "@/components/bento";
+import { Features } from "@/components/features";
+import { FootnoteContent, FootnoteMarker } from "@/components/footnote";
+import { Link } from "@/components/link";
+import { LocationCard } from "@/components/location-card";
+import { MailingList } from "@/components/mailing-list";
+import { Section } from "@/components/section";
+import { Social } from "@/components/social";
+import { Stack } from "@/components/stack";
+import { Video } from "@/components/video";
+import { env } from "@/lib/env";
+import { work } from "@/lib/live";
+import { createMetadata } from "@/lib/metadata";
+import { projects } from "@/lib/projects";
+import { resend } from "@/lib/resend";
+import { social } from "@/lib/social";
+import { stack } from "@/lib/stack";
+import type { Metadata } from "next";
+import { unstable_cache } from "next/cache";
 
 const getSubscribers = unstable_cache(
   async () => {
@@ -26,18 +27,18 @@ const getSubscribers = unstable_cache(
 
     return contacts.data?.data.length ?? 0;
   },
-  ['subscribers'],
+  ["subscribers"],
   {
     revalidate: 60, // Cache for 1 minute
-    tags: ['subscribers'],
+    tags: ["subscribers"],
   }
 );
 
 export const metadata: Metadata = createMetadata({
-  title: 'Home',
+  title: "Home",
   description:
-    'I&apos;m an Italian Product Manager living in Amsterdam, Netherlands. I love creating beautiful software that delights users and reimagines the way we interact with technology.',
-  ogText: 'Product Manager and Startup Accelerator Manager based in 🇪🇺 Europe.',
+    "I&apos;m an Italian Product Manager living in Amsterdam, Netherlands. I love creating beautiful software that delights users and reimagines the way we interact with technology.",
+  ogText: "Product Manager and Startup Accelerator Manager based in 🇪🇺 Europe.",
 });
 
 const Home = async () => {
@@ -45,24 +46,50 @@ const Home = async () => {
 
   return (
     <>
-      
       <Section>
-        <Avatar className="h-12 w-12" />
-        <h1 className="text-7xl font-instrument tracking-tight">Hi, I'm Mauro</h1>
-        <h2 className="text-xl mt-0 mb-12">Digital Product Manager<br/>Startup Accelerator Manager</h2>
-
+        <h1 className="text-6xl lg:text-7xl font-instrument tracking-tight">
+          Hi, I'm Mauro
+          <Avatar className="inline-block h-16 w-16 mb-5 ml-3" />
+        </h1>
+        <h2 className="text-xl mt-0 mb-12">
+          Digital Product Manager
+          <br />
+          Startup Accelerator Manager
+        </h2>
+        <Link href="/contact" className="w-fit" delay={0.5}>
+          <div
+            className="p-1 bg-gray-100 items-center w-fit leading-none rounded-full flex inline-flex mb-10 transition-bg-color duration-300 hover:bg-transparent"
+            role="alert"
+          >
+            <span className="flex rounded-full bg-yellow-400 uppercase px-2 py-1 text-xs font-bold mr-3">
+              HIRE ME
+            </span>
+            <span class="text-sm mr-2 text-left flex-auto">
+              Just 2 spots free for 2025
+            </span>
+            <svg
+              className="fill-current opacity-75 h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
+            </svg>
+          </div>
+        </Link>
         <p>
-          I&apos;m an 🇮🇹 Italian Product Manager living in{' '}
+          I&apos;m an 🇮🇹 Italian Product Manager living in{" "}
           <LocationCard timezone="Europe/Amsterdam">
             🇳🇱 Amsterdam, Netherlands,
-          </LocationCard> and I identify myself as 🇪🇺 European.
-          I love creating beautiful software that delights users and
-          reimagines the way we interact with technology. I&apos;m also an avid
-          drone pilot, gamer and open source maintainer.
+          </LocationCard>{" "}
+          and I identify myself as 🇪🇺 European. I love creating beautiful
+          software that delights users and reimagines the way we interact with
+          technology. I&apos;m also an avid drone pilot, gamer and open source
+          maintainer.
         </p>
+        <Bento />
         <p>
           I&apos;m currently exploring new ideas (particularly AI-native apps)
-          and building open source software. If you like my OSS work, you can{' '}
+          and building open source software. If you like my OSS work, you can{" "}
           <Link href="https://github.com/sponsors/haydenbleasel">
             sponsor me
           </Link>
@@ -70,13 +97,13 @@ const Home = async () => {
         </p>
         <p>
           I maintain a small mailing list where I share infrequent updates on my
-          projects and what&apos;s new. Join{' '}
+          projects and what&apos;s new. Join{" "}
           {new Intl.NumberFormat().format(subscribers)} readers if you&apos;re
           interested!
         </p>
         <MailingList />
         <p>
-          You can also read my <Link href="/blog">blog</Link>,{' '}
+          You can also read my <Link href="/blog">blog</Link>,{" "}
           <Link href="/contact">get in touch</Link> or follow me on these
           platforms.
         </p>
@@ -90,19 +117,16 @@ const Home = async () => {
               </li>
             ))}
         </ul>
-        
       </Section>
       <Section delay={0.2}>
         <h2>Work</h2>
         <p>Some conferences, meetups and interviews I've been a part of.</p>
-        <Features
-          data={[...work].sort((a, b) => b.year - a.year)}
-        />
+        <Features data={[...work].sort((a, b) => b.year - a.year)} />
       </Section>
       <Section delay={0.4}>
         <h2>Work</h2>
         <p>
-          My previous role was Chief Product Officer at{' '}
+          My previous role was Chief Product Officer at{" "}
           <Link href="https://www.corellium.com/">Corellium</Link>, pioneers of
           an incredible Arm virtualisation platform. I moved to Delray Beach,
           Florida in 2021 to lead the Product, Design and Support teams in
@@ -110,33 +134,33 @@ const Home = async () => {
           to assist with security research (typically for government agencies
           and defense contractors looking for OS-level vulnerabilities),
           pentesting, DevSecOps and training. In my last year as CPO, we
-          achieved a{' '}
+          achieved a{" "}
           <Link href="https://www.corellium.com/blog/record-growth-innovation-2024">
             50%+ increase in ARR
-          </Link>{' '}
+          </Link>{" "}
           and a 97% renewal rate; and rolled out new solutions in the Enterprise
           and Automotive space.
         </p>
         <p>
-          Before that, I was Director of{' '}
+          Before that, I was Director of{" "}
           <Link href="/blog/jellypepper">Jellypepper</Link>, an award-winning
           digital agency for disruptive startups. We worked with early stage
           tech companies in niche areas such as self-driving car tech, AI,
           biotech, crypto, drone delivery, cybersecurity and even orbital (outer
-          space) logistics. Jellypepper was{' '}
+          space) logistics. Jellypepper was{" "}
           <Link href="https://raw.studio/blog/raw-studio-acquires-jellypepper-to-expand-its-reach-to-the-startup-ecosystem/">
             acquired
-          </Link>{' '}
+          </Link>{" "}
           by Raw Studio in 2024.
         </p>
         <p>
-          Earlier in my career, I was the Head of Product and Design at{' '}
+          Earlier in my career, I was the Head of Product and Design at{" "}
           <Link href="https://www.spaceship.com.au/">Spaceship</Link>, a leading
-          Australian investing platform later{' '}
+          Australian investing platform later{" "}
           <Link href="https://www.spaceship.com.au/news/etoro-completes-acquisition-spaceship/">
             acquired by eToro
           </Link>
-          ; and did a product design internship at{' '}
+          ; and did a product design internship at{" "}
           <Link href="https://www.palantir.com/">Palantir</Link>. Through
           various contracts, I was also fortunate enough to work with Australian
           Ethical, Canva, Clipchamp, ESLint, Google, National Geographic, Nike,
@@ -146,14 +170,14 @@ const Home = async () => {
         </p>
         <p>
           I've also enjoyed working with open source organizations. You may have
-          seen some of my work out there &mdash;{' '}
+          seen some of my work out there &mdash;{" "}
           <Link href="https://eslint.org/blog/2022/08/redesigning-eslint/">
             ESLint
           </Link>
-          ,{' '}
+          ,{" "}
           <Link href="https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign">
             Node.js
-          </Link>{' '}
+          </Link>{" "}
           and <Link href="https://plugins.swc.rs/">SWC plugins</Link> for
           example.
         </p>
@@ -167,8 +191,8 @@ const Home = async () => {
         </p>
         <p>
           One of my earlier successes was a tool for learning, improving and
-          generating code with AI called{' '}
-          <Link href="https://www.refraction.com/">Refraction</Link> which was{' '}
+          generating code with AI called{" "}
+          <Link href="https://www.refraction.com/">Refraction</Link> which was{" "}
           <Link href="/blog/refraction">acquired</Link> by Twistag in 2023.
           Refraction was used by the world's most innovative companies,
           including Amazon, Accenture, Bentley, Cisco, IKEA, Repl.it, Roblox,
@@ -179,7 +203,7 @@ const Home = async () => {
         <ul className="list-disc pl-5">
           {projects.map((project) => (
             <li key={project.name}>
-              <Link href={project.link}>{project.name}</Link> -{' '}
+              <Link href={project.link}>{project.name}</Link> -{" "}
               {project.description}
             </li>
           ))}
@@ -191,11 +215,11 @@ const Home = async () => {
           I love to explore new places and capture the beauty of nature and
           urban landscapes. I currently have a DJI Mavic 3 Pro which sports a
           Hasselblad triple-camera system capable of recording 4K video at
-          60FPS. I publish my individual clips on{' '}
+          60FPS. I publish my individual clips on{" "}
           <Link href="https://www.instagram.com/hayden.bleasel/">
             Instagram
-          </Link>{' '}
-          and my full-length videos on{' '}
+          </Link>{" "}
+          and my full-length videos on{" "}
           <Link href="https://www.youtube.com/playlist?list=PLw95VUVc_2gh5oGx-jj9PnatiMKtQBiV2">
             YouTube
           </Link>
@@ -213,8 +237,8 @@ const Home = async () => {
         <p>Here's some tools, technology and products I use every day.</p>
         <Stack data={stack} />
       </Section>
-      
-      <div className="-mx-8 border-t border-dotted p-8">
+
+      <div className="border-t border-dotted p-8">
         <Section delay={1.2}>
           <FootnoteContent index={1}>
             I've also worked with Advancell, Airwallex, Audience Republic,
@@ -236,7 +260,8 @@ const Home = async () => {
       </div>
       <footer className="text-foreground-lighter text-sm leading-relaxed">
         <p>
-          &copy; {new Date().getFullYear()} Mauro Fontanari. All rights reserved.
+          &copy; {new Date().getFullYear()} Mauro Fontanari. All rights
+          reserved.
         </p>
       </footer>
     </>
