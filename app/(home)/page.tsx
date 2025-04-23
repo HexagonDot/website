@@ -9,7 +9,7 @@ import { Social } from '@/components/social';
 import { Stack } from '@/components/stack';
 import { Video } from '@/components/video';
 import { env } from '@/lib/env';
-import { work, interviews, speaking } from '@/lib/live';
+import { work } from '@/lib/live';
 import { createMetadata } from '@/lib/metadata';
 import { projects } from '@/lib/projects';
 import { resend } from '@/lib/resend';
