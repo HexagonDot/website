@@ -56,7 +56,7 @@ const Home = async () => {
           <br />
           Startup Accelerator Manager
         </h2>
-        <Link href="/contact" className="w-fit" delay={0.5}>
+        <Link href="/contact" className="w-fit">
           <div
             className="p-1 bg-gray-100 items-center w-fit leading-none rounded-full flex inline-flex mb-10 transition-bg-color duration-300 hover:bg-transparent"
             role="alert"
@@ -64,7 +64,7 @@ const Home = async () => {
             <span className="flex rounded-full bg-yellow-400 uppercase px-2 py-1 text-xs font-bold mr-3">
               HIRE ME
             </span>
-            <span class="text-sm mr-2 text-left flex-auto">
+            <span className="text-sm mr-2 text-left flex-auto">
               Just 2 spots free for 2025
             </span>
             <svg
