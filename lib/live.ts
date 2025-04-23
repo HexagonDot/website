@@ -18,12 +18,16 @@ export const work = [
   {
     name: 'Xero Roadshow Breakfast Panel Session at Xero',
     year: 2020,
+    yearEnd: 'TODAY',
+    detail: 'prova testo',
     location: 'ICC Sydney',
     url: 'https://x.com/haydenbleasel/status/1225231600058679296',
   },
   {
     name: 'Using Gatsby Inside of a Digital Agency at Gatsby Arvos',
     year: 2019,
+    yearEnd: 'TODAY',
+    detail: 'prova testo',
     location: 'Chippendale, Sydney',
     url: 'https://x.com/PooleyAllan/status/1189674966125436928',
   },

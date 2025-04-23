@@ -36,8 +36,8 @@ const getSubscribers = unstable_cache(
 export const metadata: Metadata = createMetadata({
   title: 'Home',
   description:
-    'I&apos;m an Australian Design Engineer living in 🇺🇸 Delray Beach, Florida. I love creating beautiful software that delights users and reimagines the way we interact with technology.',
-  ogText: 'Australian Design Engineer currently based in 🇺🇸 Delray Beach, FL.',
+    'I&apos;m an Italian Product Manager living in Amsterdam, Netherlands. I love creating beautiful software that delights users and reimagines the way we interact with technology.',
+  ogText: 'Product Manager and Startup Accelerator Manager based in 🇪🇺 Europe.',
 });
 
 const Home = async () => {
