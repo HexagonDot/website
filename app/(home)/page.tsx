@@ -1,5 +1,5 @@
 import { Avatar } from "@/components/avatar";
-import Bento from "@/components/bento";
+// import Bento from "@/components/bento";
 import { Features } from "@/components/features";
 import { FootnoteContent, FootnoteMarker } from "@/components/footnote";
 import { Link } from "@/components/link";
@@ -58,13 +58,13 @@ const Home = async () => {
         </h2>
         <Link href="/contact" className="w-fit">
           <div
-            className="p-1 bg-gray-100 items-center w-fit leading-none rounded-full flex inline-flex mb-10 transition-bg-color duration-300 hover:bg-transparent"
+            className="p-1 bg-gray-100 items-center w-fit leading-none rounded-full flex inline-flex mb-10 transition-bg-color duration-300 hover:bg-gray-200 dark:bg-transparent dark:border dark:border-white-500"
             role="alert"
           >
-            <span className="flex rounded-full bg-yellow-400 uppercase px-2 py-1 text-xs font-bold mr-3">
+            <span className="flex rounded-full bg-yellow-400 uppercase px-2 py-1 text-xs font-bold mr-3 text-white dark:text-black">
               HIRE ME
             </span>
-            <span className="text-sm mr-2 text-left flex-auto">
+            <span className="text-sm mr-2 text-left flex-auto dark:text-white">
               Just 2 spots free for 2025
             </span>
             <svg
@@ -77,23 +77,28 @@ const Home = async () => {
           </div>
         </Link>
         <p>
-          I&apos;m an 🇮🇹 Italian Product Manager living in{" "}
+          I&apos;m an 🇮🇹 Italian Product Manager & Startup Accelerator Manager
+          living in{" "}
           <LocationCard timezone="Europe/Amsterdam">
             🇳🇱 Amsterdam, Netherlands,
           </LocationCard>{" "}
-          and I identify myself as 🇪🇺 European. I love creating beautiful
-          software that delights users and reimagines the way we interact with
-          technology. I&apos;m also an avid drone pilot, gamer and open source
-          maintainer.
+          and I identify myself as 🇪🇺 European.{" "}
         </p>
-        <Bento />
         <p>
-          I&apos;m currently exploring new ideas (particularly AI-native apps)
-          and building open source software. If you like my OSS work, you can{" "}
-          <Link href="https://github.com/sponsors/haydenbleasel">
-            sponsor me
-          </Link>
-          .
+          I'm passionate about transforming innovative ideas into impactful
+          solutions. With over 16 years of experience in product management,
+          I've navigated diverse sectors including FinTech, HealthTech, and
+          EdTech, helping startups and established companies achieve their
+          goals. My journey has been marked by a blend of strategic vision and
+          practical execution, always centered around human-centered design and
+          agile methodologies.
+        </p>
+        {/* <Bento /> */}
+        <p>
+          Currently, I'm dedicated to building, developing, and managing B2B
+          SaaS products. I thrive on collaborating with cross-functional teams
+          to set product strategies, conduct market research, and create
+          roadmaps that align with business objectives and market demands.
         </p>
         <p>
           I maintain a small mailing list where I share infrequent updates on my
@@ -104,8 +109,8 @@ const Home = async () => {
         <MailingList />
         <p>
           You can also read my <Link href="/blog">blog</Link>,{" "}
-          <Link href="/contact">get in touch</Link> or follow me on these
-          platforms.
+          <Link href="/contact">get in touch</Link>, contact me or follow me on
+          these platforms:
         </p>
         <ul className="flex flex-wrap gap-1">
           {Object.entries(social)
@@ -120,86 +125,27 @@ const Home = async () => {
       </Section>
       <Section delay={0.2}>
         <h2>Work</h2>
-        <p>Some conferences, meetups and interviews I've been a part of.</p>
         <Features data={[...work].sort((a, b) => b.year - a.year)} />
       </Section>
       <Section delay={0.4}>
-        <h2>Work</h2>
+        <h2>Projects & Impact</h2>
         <p>
-          My previous role was Chief Product Officer at{" "}
-          <Link href="https://www.corellium.com/">Corellium</Link>, pioneers of
-          an incredible Arm virtualisation platform. I moved to Delray Beach,
-          Florida in 2021 to lead the Product, Design and Support teams in
-          blurring the line between real and virtual. Their platform is designed
-          to assist with security research (typically for government agencies
-          and defense contractors looking for OS-level vulnerabilities),
-          pentesting, DevSecOps and training. In my last year as CPO, we
-          achieved a{" "}
-          <Link href="https://www.corellium.com/blog/record-growth-innovation-2024">
-            50%+ increase in ARR
-          </Link>{" "}
-          and a 97% renewal rate; and rolled out new solutions in the Enterprise
-          and Automotive space.
-        </p>
-        <p>
-          Before that, I was Director of{" "}
-          <Link href="/blog/jellypepper">Jellypepper</Link>, an award-winning
-          digital agency for disruptive startups. We worked with early stage
-          tech companies in niche areas such as self-driving car tech, AI,
-          biotech, crypto, drone delivery, cybersecurity and even orbital (outer
-          space) logistics. Jellypepper was{" "}
-          <Link href="https://raw.studio/blog/raw-studio-acquires-jellypepper-to-expand-its-reach-to-the-startup-ecosystem/">
-            acquired
-          </Link>{" "}
-          by Raw Studio in 2024.
-        </p>
-        <p>
-          Earlier in my career, I was the Head of Product and Design at{" "}
-          <Link href="https://www.spaceship.com.au/">Spaceship</Link>, a leading
-          Australian investing platform later{" "}
-          <Link href="https://www.spaceship.com.au/news/etoro-completes-acquisition-spaceship/">
-            acquired by eToro
-          </Link>
-          ; and did a product design internship at{" "}
-          <Link href="https://www.palantir.com/">Palantir</Link>. Through
-          various contracts, I was also fortunate enough to work with Australian
-          Ethical, Canva, Clipchamp, ESLint, Google, National Geographic, Nike,
-          Node.js, R/GA, Timberland, Toyota, Westfield and many more brilliant
-          companies
-          <FootnoteMarker index={1} />.
-        </p>
-        <p>
-          I've also enjoyed working with open source organizations. You may have
-          seen some of my work out there &mdash;{" "}
-          <Link href="https://eslint.org/blog/2022/08/redesigning-eslint/">
-            ESLint
-          </Link>
-          ,{" "}
-          <Link href="https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign">
-            Node.js
-          </Link>{" "}
-          and <Link href="https://plugins.swc.rs/">SWC plugins</Link> for
-          example.
+          Throughout my career, I've{" "}
+          <span className="font-bold">
+            launched numerous products and programs,
+          </span>
+          always striving to make a meaningful impact. From accelerating
+          startups to redesigning digital banking experiences, my work has
+          consistently driven growth and innovation.
         </p>
       </Section>
       <Section delay={0.4}>
-        <h2>Projects</h2>
+        <h2>Teaching & Mentoring</h2>
         <p>
-          I've built a lot of projects, apps and tools over the years. Many have
-          failed and some have succeeded, but I've learned a lot from each of
-          them.
+          I've shared my expertise through teaching and mentoring, covering
+          topics like entrepreneurship, design thinking, and innovation at
+          institutions.
         </p>
-        <p>
-          One of my earlier successes was a tool for learning, improving and
-          generating code with AI called{" "}
-          <Link href="https://www.refraction.com/">Refraction</Link> which was{" "}
-          <Link href="/blog/refraction">acquired</Link> by Twistag in 2023.
-          Refraction was used by the world's most innovative companies,
-          including Amazon, Accenture, Bentley, Cisco, IKEA, Repl.it, Roblox,
-          Softbank, Sega, TikTok, Uber, Yahoo and more
-          <FootnoteMarker index={2} />.
-        </p>
-        <p>Many of my projects are still active or in progress, including:</p>
         <ul className="list-disc pl-5">
           {projects.map((project) => (
             <li key={project.name}>
@@ -210,27 +156,12 @@ const Home = async () => {
         </ul>
       </Section>
       <Section delay={0.6}>
-        <h2>Adventures</h2>
+        <h2>Education & Certifications</h2>
         <p>
-          I love to explore new places and capture the beauty of nature and
-          urban landscapes. I currently have a DJI Mavic 3 Pro which sports a
-          Hasselblad triple-camera system capable of recording 4K video at
-          60FPS. I publish my individual clips on{" "}
-          <Link href="https://www.instagram.com/hayden.bleasel/">
-            Instagram
-          </Link>{" "}
-          and my full-length videos on{" "}
-          <Link href="https://www.youtube.com/playlist?list=PLw95VUVc_2gh5oGx-jj9PnatiMKtQBiV2">
-            YouTube
-          </Link>
-          .
+          I've enhanced my skills through programs from Harvard Business School,
+          IBM, IDEO, and the University of Virginia, focusing on disruptive
+          strategy, open innovation, and design thinking.
         </p>
-        <p>
-          Here's my latest full-length video from Minnesota and South Dakota —
-          an expedition through the frozen plains of the Midwestern United
-          States.
-        </p>
-        <Video url="https://www.youtube.com/watch?v=cdlTnSk5DIg" />
       </Section>
       <Section delay={0.8}>
         <h2>Stack</h2>

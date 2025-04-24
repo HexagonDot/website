@@ -10,12 +10,21 @@ import Threads from './threads.svg';
 import TikTok from './tiktok.svg';
 import X from './x.svg';
 import YouTube from './youtube.svg';
+import Element from './element.jpeg';
+
 
 export const social = {
   linkedin: {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/haydenbleasel',
     icon: LinkedIn,
+    follow: true,
+    invert: false,
+  },
+  element: {
+    label: 'Element',
+    href: 'https://matrix.to/#/@hexagondot:matrix.org',
+    icon: Element,
     follow: true,
     invert: false,
   },

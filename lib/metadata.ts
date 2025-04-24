@@ -11,7 +11,7 @@ type MetadataGenerator = Omit<Metadata, 'description' | 'title'> & {
 const applicationName = 'Mauro Fontanari';
 const author: Metadata['authors'] = {
   name: 'Mauro Fontanari',
-  url: 'https://haydenbleasel.com/',
+  url: 'https://maurofontanari.com/',
 };
 const publisher = 'Mauro Fontanari';
 const twitterHandle = '@hexagondot';
